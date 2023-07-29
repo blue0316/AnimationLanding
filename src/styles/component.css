@@ -1,0 +1,28 @@
+canvas {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.scene-nav--prev {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  font-size: 32px;
+}
+
+.scene-nav--next {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  font-size: 32px;
+}
+
+.slide-wrapper {
+  display: none;
+}
+
+.icon--arrow-nav-next {
+  transform: rotate(-180deg);
+}

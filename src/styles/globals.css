@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: #fff;
+  background: #111;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #fff !important;
+  background-color: transparent !important;
+}
+
+.header-nav {
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.header-nav::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transition: all ease 0.3s;
+}
+
+canvas {
+  filter: brightness(0.75);
+}
+
+/* .slide-item {
+  position: relative;
+} 
+
+.slide-item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.25;
+}
+
+.header-nav.active::after {
+  transform: scaleX(1);
+}
+
+.header-nav:hover::after {
+  transform: scaleX(1);
+} */
+
+.text-stroke {
+  -webkit-text-stroke: 1px white;
+}
+
+.swiper-button-disabled {
+  pointer-events: none;
+  opacity: 0% !important;
+}
+
+/* .header-nav-slider .swiper-slide {
+  filter: brightness(.5);
+  transition: all ease .3s;
+}
+
+.header-nav-slider .swiper-slide:hover {
+  filter: brightness(1);
+}
+
+.header-nav-slider .swiper-slide.swiper-slide-active {
+  filter: brightness(1);
+} */
+
+.swiper-scrollbar {
+  z-index: 100;
+}
+
+.nav-list-body .swiper-slide {
+  display: flex;
+  align-items: center;
+}
+
+.cursor-custom {
+  cursor: url("/assets/cursor.png") 30 30 , auto;
+}
