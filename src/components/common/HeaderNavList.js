@@ -86,7 +86,7 @@ const HeaderNavList = () => {
                 <Swiper
                   ref={sliderRef}
                   // modules={[Scrollbar]}
-                  className="flex flex-1 !mx-40 h-[70vh] !pt-8"
+                  className="flex flex-1 2xl:!mx-40 xs:!ml-12 2xl:ml-0 h-[70vh] !pt-8"
                   slidesPerView={4.5}
                   spaceBetween={10}
                   direction="vertical"
@@ -102,7 +102,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(0);
                       }}
                       className={classNames({
-                        "text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 0,
                       })}
                     >
@@ -116,7 +116,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(1);
                       }}
                       className={classNames({
-                        "text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 1,
                       })}
                     >
@@ -130,7 +130,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(2);
                       }}
                       className={classNames({
-                        "text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 2,
                       })}
                     >
@@ -144,7 +144,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(3);
                       }}
                       className={classNames({
-                        "text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 2,
                       })}
                     >
@@ -158,7 +158,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(4);
                       }}
                       className={classNames({
-                        "text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 2,
                       })}
                     >
@@ -172,7 +172,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(5);
                       }}
                       className={classNames({
-                        "text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 2,
                       })}
                     >
@@ -186,7 +186,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(6);
                       }}
                       className={classNames({
-                        "text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 2,
                       })}
                     >
@@ -196,7 +196,7 @@ const HeaderNavList = () => {
                 </Swiper>
               </div>
               <div className="nav-list-bottom flex justify-end my-10">
-                <button className="py-4 px-12 border-white border-2 rounded-3xl hover:bg-white hover:text-black transition-all duration-300 cursor-custom">
+                <button className="xs:py-2 xs:px-8 2xl:py-4 2xl:px-12 border-white border-2 rounded-3xl hover:bg-white hover:text-black transition-all duration-300 cursor-custom">
                   LOGIN AS AGENT
                 </button>
               </div>

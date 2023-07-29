@@ -117,7 +117,7 @@ canvas {
   cursor: url("/assets/cursor.png") 30 30, auto;
 }
 
-.video {
+/* .video {
   position: relative;
   padding-bottom: 56.25%;
   padding-top: 0;
@@ -130,4 +130,5 @@ canvas {
   top: 0;
   bottom: 0;
   left: 0;
-}
+} */
+
