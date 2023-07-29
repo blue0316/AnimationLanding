@@ -114,5 +114,20 @@ canvas {
 }
 
 .cursor-custom {
-  cursor: url("/assets/cursor.png") 30 30 , auto;
+  cursor: url("/assets/cursor.png") 30 30, auto;
+}
+
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.video iframe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
 }

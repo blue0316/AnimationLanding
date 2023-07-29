@@ -1,28 +1,34 @@
 import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import Image from "next/image";
+// import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade } from "swiper/modules";
 // import Lottie from "lottie-react";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
+import Vimeo from "@u-wave/react-vimeo";
 
 // import nextAnimation from "../../../animations/nextAnimation.json";
-import BgImage from "@/components/common/BgImage";
 import { activeSlideId } from "@/store";
+import BgImage from "@/components/common/BgImage";
+import SliderBtn from "@/components/common/SliderBtn";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import SliderBtn from "@/components/common/SliderBtn";
 
 const CustomFont = dynamic(() => import("@/components/common/CustomFont"), {
   ssr: false,
 });
 
 const IntroSection = () => {
+  const [mounted, setMounted] = useState(false);
   const [activeIndex, setActiveIndex] = useAtom(activeSlideId);
   const [activeIndexState, setActiveIndexState] = useState(0);
   const sliderRef = useRef(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     setActiveIndexState(activeIndex);
@@ -240,7 +246,17 @@ const IntroSection = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative h-full">
-          <video
+          <Vimeo
+            video="711121097"
+            className="2xl:!w-full"
+            controls={false}
+            background={true}
+            loop={true}
+            responsive={true}
+            style={{ width: mounted ? window.innerHeight / 0.5625 : 100 }}
+            autoPlay
+          />
+          {/* <video
             id="background-video"
             className="w-full h-full object-cover"
             autoPlay
@@ -249,7 +265,7 @@ const IntroSection = () => {
             poster="/assets/video_poster.jpg"
           >
             <source src="/assets/intro.mp4" type="video/mp4" />
-          </video>
+          </video> */}
         </SwiperSlide>
         <button
           className="scene-nav--prev flex flex-row items-center text-lg h-20 p-2 bg-transparent text-white hover:scale-110 rounded-full z-10 -translate-x-10 transition-all duration-300 leading-none"

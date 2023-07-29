@@ -14,6 +14,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@u-wave/react-vimeo": "^0.9.10",
     "autoprefixer": "10.4.14",
     "classnames": "^2.3.2",
     "eslint": "8.45.0",
