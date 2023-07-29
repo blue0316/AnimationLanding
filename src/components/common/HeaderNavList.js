@@ -101,6 +101,10 @@ const HeaderNavList = () => {
                         setActiveIndex(0);
                         // sliderRef.current.swiper.slideTo(0);
                       }}
+                      onTouchStart={() => {
+                        setActiveIndex(0);
+                        // sliderRef.current.swiper.slideTo(6);
+                      }}
                       className={classNames({
                         "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 0,
@@ -114,6 +118,10 @@ const HeaderNavList = () => {
                       onMouseEnter={() => {
                         setActiveIndex(1);
                         // sliderRef.current.swiper.slideTo(1);
+                      }}
+                      onTouchStart={() => {
+                        setActiveIndex(1);
+                        // sliderRef.current.swiper.slideTo(6);
                       }}
                       className={classNames({
                         "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
@@ -129,6 +137,10 @@ const HeaderNavList = () => {
                         setActiveIndex(2);
                         // sliderRef.current.swiper.slideTo(2);
                       }}
+                      onTouchStart={() => {
+                        setActiveIndex(2);
+                        // sliderRef.current.swiper.slideTo(6);
+                      }}
                       className={classNames({
                         "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 2,
@@ -142,6 +154,10 @@ const HeaderNavList = () => {
                       onMouseEnter={() => {
                         setActiveIndex(3);
                         // sliderRef.current.swiper.slideTo(3);
+                      }}
+                      onTouchStart={() => {
+                        setActiveIndex(3);
+                        // sliderRef.current.swiper.slideTo(6);
                       }}
                       className={classNames({
                         "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
@@ -157,6 +173,10 @@ const HeaderNavList = () => {
                         setActiveIndex(4);
                         // sliderRef.current.swiper.slideTo(4);
                       }}
+                      onTouchStart={() => {
+                        setActiveIndex(4);
+                        // sliderRef.current.swiper.slideTo(6);
+                      }}
                       className={classNames({
                         "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 2,
@@ -171,6 +191,10 @@ const HeaderNavList = () => {
                         setActiveIndex(5);
                         // sliderRef.current.swiper.slideTo(5);
                       }}
+                      onTouchStart={() => {
+                        setActiveIndex(5);
+                        // sliderRef.current.swiper.slideTo(6);
+                      }}
                       className={classNames({
                         "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 2,
@@ -182,6 +206,10 @@ const HeaderNavList = () => {
                   <SwiperSlide>
                     <div
                       onMouseEnter={() => {
+                        setActiveIndex(6);
+                        // sliderRef.current.swiper.slideTo(6);
+                      }}
+                      onTouchStart={() => {
                         setActiveIndex(6);
                         // sliderRef.current.swiper.slideTo(6);
                       }}
