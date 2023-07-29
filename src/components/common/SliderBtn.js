@@ -8,7 +8,7 @@ const SliderBtn = ({ className, direction }) => {
   return (
     <div
       className={classNames([
-        "flex relative justify-center items-center w-16 h-16",
+        "flex relative justify-center items-center w-16 h-16 transition-all duration-300",
         className,
       ])}
     >

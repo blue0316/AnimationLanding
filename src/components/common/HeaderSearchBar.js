@@ -25,7 +25,7 @@ const HeaderSearchBar = () => {
   }, [keyword]);
 
   return (
-    <div className="flex relative justify-center max-w-6xl min-w-[720px] px-5 py-2 mx-auto border-0 rounded-full bg-black bg-opacity-25">
+    <div className="xs:hidden 2xl:flex relative justify-center max-w-6xl min-w-[720px] px-5 py-2 mx-auto border-0 rounded-full bg-black bg-opacity-25">
       <div className="pr-4 text-gray-400">
         <FontAwesomeIcon icon={faSearch} size="lg" />
       </div>

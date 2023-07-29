@@ -52,7 +52,7 @@ const IntroSection = () => {
       >
         <SwiperSlide className="relative h-full">
           <BgImage className="h-full brightness-50" url="/assets/villa-1.jpg" />
-          <div className="absolute container top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute xs:w-[90%] md:w-3/4 xl:container top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <CustomFont family="Chakra Petch" className="container">
               {activeIndexState === 0 && (
                 <>
@@ -115,7 +115,7 @@ const IntroSection = () => {
         </SwiperSlide>
         <SwiperSlide className="relative h-full">
           <BgImage className="h-full brightness-50" url="/assets/villa-2.jpg" />
-          <div className="absolute container top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute xs:w-[90%] md:w-3/4 xl:container top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <CustomFont family="Chakra Petch" className="container">
               {activeIndexState === 1 && (
                 <>
@@ -178,7 +178,7 @@ const IntroSection = () => {
         </SwiperSlide>
         <SwiperSlide className="relative h-full">
           <BgImage className="h-full brightness-50" url="/assets/villa-3.jpg" />
-          <div className="absolute container top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute xs:w-[90%] md:w-3/4 xl:container top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <CustomFont family="Chakra Petch" className="container">
               {activeIndexState === 2 && (
                 <>
@@ -252,28 +252,24 @@ const IntroSection = () => {
           </video>
         </SwiperSlide>
         <button
-          className="scene-nav--prev flex flex-row items-center text-lg h-20 p-2 bg-transparent text-white hover:scale-110 rounded-full z-10 group-hover:opacity-100 group-hover:visible -translate-x-10 transition-all duration-300 leading-none"
+          className="scene-nav--prev flex flex-row items-center text-lg h-20 p-2 bg-transparent text-white hover:scale-110 rounded-full z-10 -translate-x-10 transition-all duration-300 leading-none"
           data-nav="previous"
         >
-          {/* <Image
-            className="rotate-180"
-            alt="arrow"
-            width="100"
-            height="10"
-            src="/assets/arrow.svg"
-          /> */}
-          <span className="font-bold z-10">Prev</span>
-          <SliderBtn className="-ml-6" direction="prev" />
-          {/* <Lottie animationData={nextAnimation} loop={true} /> */}
+          <span className="xs:hidden lg:block font-bold z-10">Prev</span>
+          <SliderBtn
+            direction="prev"
+            className="lg:-ml-6 xs:opacity-0 xs:invisible md:opacity-100 md:visible md:translate-y-0 xs:translate-y-8 xs:group-hover:opacity-100 xs:group-hover:visible xs:group-hover:translate-y-0 xs:translate-x-8 md:translate-x-0"
+          />
         </button>
         <button
-          className="scene-nav--next flex flex-row items-center text-lg h-20 p-2 bg-transparent text-white hover:scale-110 rounded-full z-10 group-hover:opacity-100 group-hover:visible translate-x-10 transition-all duration-300 leading-none"
+          className="scene-nav--next flex flex-row items-center text-lg h-20 p-2 bg-transparent text-white hover:scale-110 rounded-full z-10 translate-x-10 transition-all duration-300 leading-none"
           data-nav="next"
         >
-          {/* <Image alt="arrow" width="100" height="10" src="/assets/arrow.svg" /> */}
-          <SliderBtn direction="next" />
-          <span className="-ml-6 font-bold z-10">Next</span>
-          {/* <Lottie animationData={nextAnimation} loop={true} /> */}
+          <SliderBtn
+            direction="next"
+            className="xs:opacity-0 xs:invisible md:opacity-100 md:visible md:translate-y-0 xs:translate-y-8 xs:group-hover:opacity-100 xs:group-hover:visible xs:group-hover:translate-y-0 xs:-translate-x-8 md:translate-x-0"
+          />
+          <span className="xs:hidden lg:block -ml-6 font-bold z-10">Next</span>
         </button>
       </Swiper>
     </div>
