@@ -14,7 +14,7 @@ const CustomFont = dynamic(() => import("@/components/common/CustomFont"), {
 
 const Header = () => {
   return (
-    <header className="absolute top-0 left-0 right-0 w-4/5 sm:w-full mx-auto sm:px-5 md:px-10 lg:pl-36 lg:pr-20 pt-4  z-10">
+    <header className="absolute top-0 left-0 right-0 w-4/5 sm:w-full mx-auto sm:px-5 md:px-10 lg:pl-36 lg:pr-20 pt-4 z-20">
       <div className="flex justify-between">
         <div className="flex justify-start items-center basis-1/5">
           <CustomFont family="Cormorant Garamond" className="w-full">

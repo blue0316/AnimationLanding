@@ -10,6 +10,8 @@ import ALink from "./ALink";
 
 import "swiper/css";
 import VerticalScrollbar from "./VerticalScrollbar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 const CustomFont = dynamic(() => import("@/components/common/CustomFont"), {
   ssr: false,
@@ -73,11 +75,15 @@ const HeaderNavList = () => {
               <div className="nav-list-header flex flex-row justify-end my-10">
                 <button
                   onClick={() => setOpen(false)}
-                  className="px-4 py-2 mx-6 rounded-full border-2 border-transparent text-white hover:border-white transition-all duration-300 cursor-custom"
+                  className="px-4 xs:py-4 sm:py-2 mx-6 rounded-full border-2 sm:border-transparent leading-none text-white xs:border-white hover:sm:border-white transition-all duration-300 cursor-custom"
                 >
-                  close
+                  <FontAwesomeIcon
+                    icon={faClose}
+                    className="sm:hidden xs:block"
+                  />
+                  <span className="xs:hidden sm:block">close</span>
                 </button>
-                <button className="px-4 py-2 bg-white rounded-full text-black border-2 border-white transition-all duration-300 cursor-custom">
+                <button className="xs:hidden sm:block px-4 py-2 bg-white rounded-full text-black border-2 border-white transition-all duration-300 cursor-custom">
                   Menu
                 </button>
               </div>
@@ -223,8 +229,8 @@ const HeaderNavList = () => {
                   </SwiperSlide>
                 </Swiper>
               </div>
-              <div className="nav-list-bottom flex justify-end my-10">
-                <button className="xs:py-2 xs:px-8 2xl:py-4 2xl:px-12 border-white border-2 rounded-3xl hover:bg-white hover:text-black transition-all duration-300 cursor-custom">
+              <div className="nav-list-bottom flex xs:justify-center sm:justify-end my-10">
+                <button className="xs:py-2 xs:px-6 2xl:py-4 2xl:px-12 border-white border-2 rounded-3xl hover:bg-white hover:text-black transition-all duration-300 cursor-custom">
                   LOGIN AS AGENT
                 </button>
               </div>
@@ -235,7 +241,7 @@ const HeaderNavList = () => {
           onClick={() => setOpen(!open)}
           className={classNames({ "z-20": open })}
         >
-          <div className="flex flex-col items-end justify-end w-10 h-8 cursor-pointer transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
+          <div className="flex flex-col items-end justify-end w-10 h-8 cursor-pointer transform sm:-translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
             <span
               className={classNames({
                 "absolute h-0.5 bg-white transform transition-all duration-300 ease-in-out -translate-y-2.5": true,
