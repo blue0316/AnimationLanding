@@ -246,19 +246,21 @@ const IntroSection = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative h-full">
-          <Vimeo
-            video="711121097"
-            className="2xl:!w-full"
-            controls={false}
-            background={true}
-            loop={false}
-            responsive={true}
-            style={{ width: mounted ? window.innerHeight / 0.5625 : 100 }}
-            onEnd={(props) => {
-              sliderRef.current.swiper.slideTo(0);
-            }}
-            autoPlay
-          />
+          {activeIndex === 3 && (
+            <Vimeo
+              video="711121097"
+              className="2xl:!w-full"
+              controls={false}
+              background={true}
+              loop={false}
+              responsive={true}
+              style={{ width: mounted ? window.innerHeight / 0.5625 : 100 }}
+              onEnd={(props) => {
+                sliderRef.current.swiper.slideTo(0);
+              }}
+              autoPlay
+            />
+          )}
           {/* <video
             id="background-video"
             className="w-full h-full object-cover"

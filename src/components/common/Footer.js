@@ -11,7 +11,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="absolute flex justify-between mx-36 mb-4 bottom-0 left-0 right-0 z-30">
+    <footer className="absolute flex justify-between mx-20 mb-8 bottom-0 left-0 right-0 z-30">
       <div></div>
       <div>
         <ul className="flex flex-row">
