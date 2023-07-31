@@ -3,12 +3,12 @@ import dynamic from "next/dynamic";
 // import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade } from "swiper/modules";
-// import Lottie from "lottie-react";
+import Lottie from "lottie-react";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import Vimeo from "@u-wave/react-vimeo";
 
-// import nextAnimation from "../../../animations/nextAnimation.json";
+import nextAnimation from "../../../animations/nextAnimation.json";
 import { activeSlideId } from "@/store";
 import BgImage from "@/components/common/BgImage";
 import SliderBtn from "@/components/common/SliderBtn";
@@ -251,9 +251,12 @@ const IntroSection = () => {
             className="2xl:!w-full"
             controls={false}
             background={true}
-            loop={true}
+            loop={false}
             responsive={true}
             style={{ width: mounted ? window.innerHeight / 0.5625 : 100 }}
+            onEnd={(props) => {
+              sliderRef.current.swiper.slideTo(0);
+            }}
             autoPlay
           />
           {/* <video
@@ -268,24 +271,26 @@ const IntroSection = () => {
           </video> */}
         </SwiperSlide>
         <button
-          className="scene-nav--prev flex flex-row items-center text-lg h-20 p-2 bg-transparent text-white hover:scale-110 rounded-full z-10 -translate-x-10 transition-all duration-300 leading-none"
+          className="scene-nav--prev flex flex-row items-center text-lg h-16 w-16 p-2 bg-transparent text-white hover:scale-110 rounded-full z-10 -translate-x-10 transition-all duration-300 leading-none rotate-180 hover:bg-white hover:bg-opacity-50"
           data-nav="previous"
         >
-          <span className="xs:hidden lg:block font-bold z-10">Prev</span>
+          {/* <span className="xs:hidden lg:block font-bold z-10">Prev</span>
           <SliderBtn
             direction="prev"
             className="lg:-ml-6 xs:opacity-0 xs:invisible md:opacity-100 md:visible md:translate-y-0 xs:translate-y-8 xs:group-hover:opacity-100 xs:group-hover:visible xs:group-hover:translate-y-0 xs:translate-x-8 md:translate-x-0"
-          />
+          /> */}
+          <Lottie animationData={nextAnimation} loop={true} />
         </button>
         <button
-          className="scene-nav--next flex flex-row items-center text-lg h-20 p-2 bg-transparent text-white hover:scale-110 rounded-full z-10 translate-x-10 transition-all duration-300 leading-none"
+          className="scene-nav--next flex flex-row items-center text-lg h-16 w-16 p-2 bg-transparent text-white hover:scale-110 rounded-full z-10 translate-x-10 transition-all duration-300 leading-none hover:bg-white hover:bg-opacity-50"
           data-nav="next"
         >
-          <SliderBtn
+          {/* <SliderBtn
             direction="next"
             className="xs:opacity-0 xs:invisible md:opacity-100 md:visible md:translate-y-0 xs:translate-y-8 xs:group-hover:opacity-100 xs:group-hover:visible xs:group-hover:translate-y-0 xs:-translate-x-8 md:translate-x-0"
           />
-          <span className="xs:hidden lg:block -ml-6 font-bold z-10">Next</span>
+          <span className="xs:hidden lg:block -ml-6 font-bold z-10">Next</span> */}
+          <Lottie animationData={nextAnimation} loop={true} />
         </button>
       </Swiper>
     </div>
