@@ -63,7 +63,7 @@ const IntroSection = () => {
           setActiveIndex(swiper.activeIndex);
         }}
         autoplay={{
-          delay: 5000,
+          delay: 3250,
           stopOnLastSlide: true,
         }}
       >
@@ -257,21 +257,32 @@ const IntroSection = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative h-full">
-          {activeIndex === 3 && (
-            <Vimeo
-              video="711121097"
-              className="2xl:!w-full"
-              controls={false}
-              background={true}
-              loop={false}
-              responsive={true}
-              style={{ width: mounted ? window.innerHeight / 0.5625 : 100 }}
-              onEnd={(props) => {
-                sliderRef.current.swiper.slideToLoop(0);
-              }}
-              autoPlay
-            />
-          )}
+          <Vimeo
+            video="711121097"
+            className="2xl:!w-full"
+            controls={false}
+            background={true}
+            loop={false}
+            responsive={true}
+            style={{ width: mounted ? window.innerHeight / 0.5625 : 100 }}
+            onEnd={(props) => {
+              sliderRef.current.swiper.slideToLoop(0);
+            }}
+            autoPlay
+          />
+          {/* // <video
+            //   id="background-video"
+            //   className="w-full h-full object-cover"
+            //   autoPlay
+            //   loop
+            //   muted
+            //   poster="/assets/video_poster.jpg"
+            //   onEnded={() => {
+            //     sliderRef.current.swiper.slideToLoop(0);
+            //   }}
+            // >
+            //   <source src="/assets/intro.mp4" type="video/mp4" />
+            // </video>  */}
           <div className="absolute xs:hidden md:flex justify-between mx-20 mb-8 bottom-0 left-0 right-0 z-10">
             <div></div>
             <div>
@@ -291,16 +302,6 @@ const IntroSection = () => {
               </ul>
             </div>
           </div>
-          {/* <video
-            id="background-video"
-            className="w-full h-full object-cover"
-            autoPlay
-            loop
-            muted
-            poster="/assets/video_poster.jpg"
-          >
-            <source src="/assets/intro.mp4" type="video/mp4" />
-          </video> */}
         </SwiperSlide>
         <button
           className="scene-nav--prev flex flex-row items-center text-lg h-16 w-16 p-2 bg-transparent text-white hover:scale-110 rounded-full z-10 -translate-x-10 transition-all duration-300 leading-none rotate-180 hover:bg-white hover:bg-opacity-50"
