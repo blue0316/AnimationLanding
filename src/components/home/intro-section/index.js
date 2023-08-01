@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 // import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, EffectFade } from "swiper/modules";
+import { Autoplay, Navigation, EffectFade } from "swiper/modules";
 import Lottie from "lottie-react";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
@@ -46,7 +46,7 @@ const IntroSection = () => {
     <div className="group h-full">
       <Swiper
         ref={sliderRef}
-        modules={[EffectFade, Navigation]}
+        modules={[Autoplay, EffectFade, Navigation]}
         navigation={{
           prevEl: ".scene-nav--prev",
           nextEl: ".scene-nav--next",
@@ -63,7 +63,8 @@ const IntroSection = () => {
           setActiveIndex(swiper.activeIndex);
         }}
         autoplay={{
-          delay: 3000
+          delay: 5000,
+          stopOnLastSlide: true,
         }}
       >
         <SwiperSlide className="relative h-full">
