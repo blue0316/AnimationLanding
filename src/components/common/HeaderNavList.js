@@ -12,6 +12,12 @@ import "swiper/css";
 import VerticalScrollbar from "./VerticalScrollbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faInstagram,
+  faTiktok,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const CustomFont = dynamic(() => import("@/components/common/CustomFont"), {
   ssr: false,
@@ -31,6 +37,13 @@ const HeaderNavList = () => {
         height: window.innerHeight,
       });
   }, []);
+
+  useEffect(() => {
+    sliderRef.current && console.log(sliderRef.current);
+    sliderRef.current &&
+      sliderRef.current.swiper.activeIndex > 1 &&
+      sliderRef.current.swiper.slideTo(3);
+  }, [activeIndex, sliderRef]);
 
   return (
     <nav>
@@ -100,6 +113,12 @@ const HeaderNavList = () => {
                   allowTouchMove={true}
                   // loop={true}
                   // centeredSlides={true}
+                  onSwiper={(swiper) => {
+                    console.log(swiper);
+                  }}
+                  onTransitionEnd={(swiper) => {
+                    console.log(swiper);
+                  }}
                 >
                   <SwiperSlide>
                     <div
@@ -229,7 +248,23 @@ const HeaderNavList = () => {
                   </SwiperSlide>
                 </Swiper>
               </div>
-              <div className="nav-list-bottom flex xs:justify-center sm:justify-end my-10">
+              <div className="nav-list-bottom flex flex-row xs:justify-center sm:justify-end my-10">
+                <div>
+                  <ul className="flex flex-row">
+                    <li className="flex justify-center items-center w-12 h-12 mr-4 border-2 rounded-full text-xl hover:text-[#507ad5] hover:border-[#507ad5] transition-all duration-300">
+                      <FontAwesomeIcon icon={faFacebook} />
+                    </li>
+                    <li className="flex justify-center items-center w-12 h-12 mr-4 border-2 rounded-full text-xl hover:text-[#1DA1F2] hover:border-[#1DA1F2] transition-all duration-300">
+                      <FontAwesomeIcon icon={faTwitter} />
+                    </li>
+                    <li className="flex justify-center items-center w-12 h-12 mr-4 border-2 rounded-full text-xl hover:text-[#E4405F] hover:border-[#E4405F] transition-all duration-300">
+                      <FontAwesomeIcon icon={faInstagram} />
+                    </li>
+                    <li className="flex justify-center items-center w-12 h-12 mr-4 border-2 rounded-full text-xl hover:text-[#25F4EE] hover:border-[#25F4EE] transition-all duration-300">
+                      <FontAwesomeIcon icon={faTiktok} />
+                    </li>
+                  </ul>
+                </div>
                 <button className="xs:py-2 xs:px-6 2xl:py-4 2xl:px-12 border-white border-2 rounded-3xl hover:bg-white hover:text-black transition-all duration-300 cursor-custom">
                   LOGIN AS AGENT
                 </button>

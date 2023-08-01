@@ -19,7 +19,6 @@ const MainSlider = ({ index, setIndex }) => {
       slidesPerView={1}
       spaceBetween={0}
       onSlideChange={(swiper) => {
-        console.log(swiper.activeIndex);
         setIndex(swiper.activeIndex);
       }}
       autoplay={{

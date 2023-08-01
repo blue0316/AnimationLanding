@@ -4,8 +4,6 @@ var spriteImages = document.querySelectorAll(".slide-item__image");
 var spriteImagesSrc = [];
 var texts = [];
 
-console.log("spriteImages", spriteImages);
-
 for (var i = 0; i < spriteImages.length; i++) {
   var img = spriteImages[i];
   // Set the texts you want to display to each slide

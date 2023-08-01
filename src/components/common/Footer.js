@@ -1,18 +1,18 @@
 "use client";
 
-import {
-  faFacebook,
-  faInstagram,
-  faTiktok,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faFacebook,
+//   faInstagram,
+//   faTiktok,
+//   faTwitter,
+// } from "@fortawesome/free-brands-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const Footer = () => {
   return (
     <footer className="absolute xs:hidden md:flex justify-between mx-20 mb-8 bottom-0 left-0 right-0 z-10">
-      <div></div>
+      {/* <div></div>
       <div>
         <ul className="flex flex-row">
           <li className="flex justify-center items-center w-12 h-12 ml-4 border-2 rounded-full text-xl hover:text-[#507ad5] hover:border-[#507ad5] transition-all duration-300">
@@ -28,7 +28,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={faTiktok} />
           </li>
         </ul>
-      </div>
+      </div> */}
     </footer>
   );
 };
