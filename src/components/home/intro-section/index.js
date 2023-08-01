@@ -62,6 +62,9 @@ const IntroSection = () => {
         onSlideChangeTransitionEnd={(swiper) => {
           setActiveIndex(swiper.activeIndex);
         }}
+        autoplay={{
+          delay: 3000
+        }}
       >
         <SwiperSlide className="relative h-full">
           <BgImage className="h-full brightness-50" url="/assets/villa-1.jpg" />

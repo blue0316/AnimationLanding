@@ -248,8 +248,8 @@ const HeaderNavList = () => {
                   </SwiperSlide>
                 </Swiper>
               </div>
-              <div className="nav-list-bottom flex flex-row xs:justify-center sm:justify-end my-10">
-                <div>
+              <div className="nav-list-bottom flex flex-row xs:justify-end md:justify-between my-10">
+                <div className="xs:hidden md:block">
                   <ul className="flex flex-row">
                     <li className="flex justify-center items-center w-12 h-12 mr-4 border-2 rounded-full text-xl hover:text-[#507ad5] hover:border-[#507ad5] transition-all duration-300">
                       <FontAwesomeIcon icon={faFacebook} />
