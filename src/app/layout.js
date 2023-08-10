@@ -1,8 +1,6 @@
-import Header from "@/components/common/Header";
-import Footer from "@/components/common/Footer";
+import Head from "next/head";
 
 import "../styles/normalize.css";
-import "../styles/demo.css";
 import "../styles/component.css";
 import "../styles/globals.css";
 
@@ -14,11 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <Head>
+        <link rel="preload" href="/assets/intro.mp4" />
+      </Head>
+      <body>{children}</body>
     </html>
   );
 }

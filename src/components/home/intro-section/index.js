@@ -2,16 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 // import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
+import classNames from "classnames";
 import { Autoplay, Navigation, EffectFade } from "swiper/modules";
 import Lottie from "lottie-react";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import Vimeo from "@u-wave/react-vimeo";
-
-import nextAnimation from "../../../animations/nextAnimation.json";
-import { activeSlideId } from "@/store";
-import BgImage from "@/components/common/BgImage";
-// import SliderBtn from "@/components/common/SliderBtn";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
   faInstagram,
@@ -19,9 +17,16 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
+import nextAnimation from "../../../animations/nextAnimation.json";
+
+import { activeSlideId } from "@/store";
+import BgImage from "@/components/common/BgImage";
+import IntroHeader from "@/components/common/headers/IntroHeader";
+import IntroFooter from "@/components/common/footers/IntroFooter";
+// import SliderBtn from "@/components/common/SliderBtn";
+
 import "swiper/css";
 import "swiper/css/navigation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CustomFont = dynamic(() => import("@/components/common/CustomFont"), {
   ssr: false,
@@ -31,6 +36,7 @@ const IntroSection = () => {
   const [mounted, setMounted] = useState(false);
   const [activeIndex, setActiveIndex] = useAtom(activeSlideId);
   const [activeIndexState, setActiveIndexState] = useState(0);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const sliderRef = useRef(null);
 
   useEffect(() => {
@@ -44,6 +50,7 @@ const IntroSection = () => {
 
   return (
     <div className="group h-full">
+      <IntroHeader />
       <Swiper
         ref={sliderRef}
         modules={[Autoplay, EffectFade, Navigation]}
@@ -259,7 +266,10 @@ const IntroSection = () => {
         <SwiperSlide className="relative h-full">
           <Vimeo
             video="711121097"
-            className="2xl:!w-full"
+            className={classNames({
+              // "2xl:!w-full": true,
+              hidden: !videoLoaded,
+            })}
             controls={false}
             background={true}
             loop={false}
@@ -268,8 +278,20 @@ const IntroSection = () => {
             onEnd={(props) => {
               sliderRef.current.swiper.slideToLoop(0);
             }}
+            onLoaded={() => {
+              setVideoLoaded(true);
+            }}
             autoPlay
           />
+          {!videoLoaded && (
+            <Image
+              className="w-full h-full"
+              src="/assets/video_poster.jpg"
+              alt="video preview"
+              width={100}
+              height={100}
+            />
+          )}
           {/* // <video
             //   id="background-video"
             //   className="w-full h-full object-cover"
@@ -326,6 +348,7 @@ const IntroSection = () => {
           <Lottie animationData={nextAnimation} loop={true} />
         </button>
       </Swiper>
+      <IntroFooter />
     </div>
   );
 };

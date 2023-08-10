@@ -132,3 +132,100 @@ canvas {
   left: 0;
 } */
 
+.react-blur-canvas {
+  height: 100vh;
+}
+
+.thumb-slide:not(.thumb-slide-active) .bg-cover {
+  filter: brightness(0.75);
+  transform: scale(1);
+  transition: all ease 0.3s;
+}
+
+.thumb-slide.thumb-slide-active .bg-cover {
+  filter: brightness(1);
+  /* transform: scale(1.1); */
+}
+
+.bg-cover.dark {
+  position: relative;
+}
+
+.bg-cover.dark::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.property-tab {
+  position: relative;
+  padding: 0 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: white !important;
+  background-color: transparent !important;
+  transition: all ease 0.3s;
+  cursor: pointer;
+  outline: none;
+}
+
+.property-tab:hover,
+.property-tab.react-tabs__tab--selected {
+  color: black !important;
+}
+
+.property-tab:not(:last-child)::after {
+  position: absolute;
+  right: -2px;
+  top: 0;
+  content: "";
+  height: 100%;
+  width: 4px;
+  background-color: white;
+}
+
+.main-slider .slick-arrow {
+  z-index: 10;
+}
+
+.main-slider .slick-arrow::before {
+  font-size: 40px;
+}
+
+.main-slider .slick-prev {
+  left: 60px;
+}
+
+.main-slider .slick-next {
+  right: 60px;
+}
+
+.btn-underline {
+  position: relative;
+}
+
+.btn-underline::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  transform: scaleX(0);
+  transition: all ease 0.3s;
+  transform-origin: center;
+  background-color: #fff;
+}
+
+.btn-underline:hover::after,
+.btn-underline.selected::after {
+  transform: scaleX(1);
+}
+
+.thumb-slider .slick-slide:not(.slick-current) {
+  filter: brightness(0.5);
+}
