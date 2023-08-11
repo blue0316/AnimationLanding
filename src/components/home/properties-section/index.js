@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import CustomFont from "@/components/common/CustomFont";
 import PropertiesHeader from "@/components/common/headers/PropertiesHeader";
@@ -15,57 +15,37 @@ const PropertiesSection = () => {
   const [currIndex, setCurrIndex] = useState(0);
 
   const changeProperty = (newIndex) => {
-    if (currType === "apartment") {
-      if (newIndex < 0) {
-        setCurrIndex(propertyData["townhouse"].length - 1);
-        setCurrType("townhouse");
-      } else if (newIndex < propertyData["apartment"].length) {
-        setCurrIndex(newIndex);
-      } else {
-        setCurrIndex(0);
-        setCurrType("penthouse");
-      }
-    }
-    if (currType === "penthouse") {
-      if (newIndex < 0) {
-        setCurrIndex(propertyData["apartment"].length - 1);
-        setCurrType("apartment");
-      } else if (newIndex < propertyData["penthouse"].length) {
-        setCurrIndex(newIndex);
-      } else {
-        setCurrIndex(0);
-        setCurrType("townhouse");
-      }
-    }
-    if (currType === "townhouse") {
-      if (newIndex < 0) {
-        setCurrIndex(propertyData["penthouse"].length - 1);
-        setCurrType("penthouse");
-      } else if (newIndex < propertyData["townhouse"].length) {
-        setCurrIndex(newIndex);
-      } else {
-        setCurrIndex(0);
-        setCurrType("apartment");
-      }
-    }
+    if (newIndex > 8) setCurrIndex(0);
+    else if (newIndex < 0) setCurrIndex(8);
+    else setCurrIndex(newIndex);
+    if (newIndex > 2 && newIndex < 6) setCurrType("penthouse");
+    else if (newIndex > 5 && newIndex < 9) setCurrType("townhouse");
+    else setCurrType("apartment");
   };
+
+  useEffect(() => {
+    if (currIndex / 3 < 1) setCurrType("apartment");
+    else if (currIndex / 3 < 2) setCurrType("penthouse");
+    else setCurrType("townhouse");
+  }, [currIndex]);
 
   return (
     <div className="relative h-full">
-      <PropertiesHeader currType={currType} setCurrType={setCurrType} />
-      <CustomFont family="Roboto">
+      <CustomFont family="Roboto" className="font-semibold">
+        <PropertiesHeader currType={currType} setCurrType={setCurrType} />
         <MainSlider
           className="h-screen"
           mainSliderRef={mainSliderRef}
-          data={propertyData[currType][currIndex]}
+          data={propertyData[currType][currIndex % 3]}
           currIndex={currIndex}
+          setCurrIndex={setCurrIndex}
           changeProperty={changeProperty}
         />
       </CustomFont>
-      <div className="absolute bottom-12 right-16 z-10 w-[40vw]">
+      <div className="absolute bottom-12 right-16 z-10 w-[30vw]">
         <PropertiesSlider
           className="thumb-slider"
-          data={propertyData[currType]}
+          data={propertyData}
           mainSliderRef={mainSliderRef}
           thumbSliderRef={thumbSliderRef}
           currIndex={currIndex}

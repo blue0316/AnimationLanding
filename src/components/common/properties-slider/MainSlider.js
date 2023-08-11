@@ -16,6 +16,7 @@ const MainSlider = ({
   data,
   changeProperty,
   currIndex,
+  setCurrIndex,
 }) => {
   const mainSettings = {
     arrows: false,
@@ -27,6 +28,14 @@ const MainSlider = ({
   };
 
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    setActiveIndex(-1);
+  }, [data]);
+
+  useEffect(() => {
+    if (activeIndex === -1) setActiveIndex(0);
+  }, [activeIndex]);
 
   return (
     <div className="relative h-full">
@@ -45,7 +54,7 @@ const MainSlider = ({
                     <div className="container mx-40 flex items-center h-full">
                       <div className="max-w-[50vw]">
                         <motion.h2
-                          className="text-7xl uppercase font-bold mb-8 leading-tight"
+                          className="text-6xl uppercase mb-4 leading-tight font-extrabold"
                           initial={{
                             y: "30%",
                             opacity: 0,
@@ -63,7 +72,7 @@ const MainSlider = ({
                           {data.title}
                         </motion.h2>
                         <motion.p
-                          className="text-2xl mb-12"
+                          className="text-xl mb-12 font-semibold uppercase"
                           initial={{
                             y: "30%",
                             opacity: 0,
@@ -82,7 +91,7 @@ const MainSlider = ({
                           {data.desc}
                         </motion.p>
                         <motion.div
-                          className="text-2xl"
+                          className="text-2xl flex"
                           initial={{
                             y: "30%",
                             opacity: 0,
@@ -98,9 +107,22 @@ const MainSlider = ({
                             delay: 0.4,
                           }}
                         >
-                          <Link href={data.link}>
-                            <span className="px-6 py-2 border-2 border-white hover:bg-white hover:text-black transition-all duration-300">
-                              Detail
+                          <Link className="group relative mx-2" href={data.link}>
+                            <span
+                              className="absolute left-0 right-0 -top-2 -bottom-2 bg-white bg-opacity-20 rounded-full"
+                              style={{ filter: "blur(2px)" }}
+                            ></span>
+                            <span className="px-6 py-2 border border-white rounded-full group-hover:bg-white group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10">
+                              Video Tour
+                            </span>
+                          </Link>
+                          <Link className="group relative mx-2" href={data.link}>
+                            <span
+                              className="absolute left-0 right-0 -top-2 -bottom-2 bg-white bg-opacity-20 rounded-full"
+                              style={{ filter: "blur(2px)" }}
+                            ></span>
+                            <span className="px-6 py-2 border border-white rounded-full group-hover:bg-white group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10">
+                              Details
                             </span>
                           </Link>
                         </motion.div>
@@ -118,17 +140,37 @@ const MainSlider = ({
                   dark={true}
                 >
                   {activeIndex === index && (
-                    <div className="absolute left-24 bottom-24 text-2xl">
-                      <Link href={data.link}>
-                        {/* <span className="px-6 py-2 border-2 border-white hover:bg-white hover:text-black transition-all duration-300"> */}
-                        <span className="px-4 py-2 btn-underline">
-                          Show detail
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        visibility: "hidden",
+                      }}
+                      animate={{
+                        opacity: 1,
+                        visibility: "visible",
+                      }}
+                      transition={{
+                        duration: 0.6,
+                        delay: 0,
+                      }}
+                      exit={{
+                        opacity: 0.5,
+                      }}
+                      className="absolute left-24 bottom-24 text-2xl"
+                    >
+                      <Link className="group relative" href={data.link}>
+                        <span
+                          className="absolute left-0 right-0 -top-2 -bottom-2 bg-white bg-opacity-20 rounded-full"
+                          style={{ filter: "blur(2px)" }}
+                        ></span>
+                        <span className="px-6 py-2 border border-white rounded-full group-hover:bg-white group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10">
+                          Show details
                         </span>
                       </Link>
-                      <h3 className="text-2xl px-4 pt-2">
+                      <h3 className="text-2xl px-4 pt-4">
                         {activeIndex + 1} / {data.images.length}
                       </h3>
-                    </div>
+                    </motion.div>
                   )}
                 </BgImage>
               );
@@ -144,6 +186,7 @@ const MainSlider = ({
           } else {
             setActiveIndex(0);
             mainSliderRef.current.slickGoTo(0);
+            setCurrIndex(currIndex - 1);
             changeProperty(currIndex - 1);
           }
         }}
@@ -158,7 +201,8 @@ const MainSlider = ({
             setActiveIndex(activeIndex + 1);
           } else {
             setActiveIndex(0);
-            mainSliderRef.current.slickGoTo(data.images.length);
+            mainSliderRef.current.slickGoTo(3);
+            setCurrIndex(currIndex + 1);
             changeProperty(currIndex + 1);
           }
         }}

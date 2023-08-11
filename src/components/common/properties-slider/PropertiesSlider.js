@@ -12,7 +12,7 @@ const PropertiesSlider = ({
   setCurrIndex,
 }) => {
   const thumbSettings = {
-    infinite: false,
+    infinite: true,
     arrows: false,
     initialSlide: 1,
     speed: 500,
@@ -44,15 +44,41 @@ const PropertiesSlider = ({
         }
       }}
     >
-      {data.map((item, index) => (
+      {data["apartment"].map((item) => (
         <div
-          key={`property-${index}`}
+          key={`property-${item.id}`}
           onClick={() => {
-            setCurrIndex(index);
-            thumbSliderRef.current.slickGoTo(index);
+            setCurrIndex(item.id - 1);
+            thumbSliderRef.current.slickGoTo(item.id - 1);
             mainSliderRef.current.slickGoTo(0);
           }}
-          className="h-48 px-1"
+          className="h-32 px-1"
+        >
+          <BgImage url={item.images[0]} />
+        </div>
+      ))}
+      {data["penthouse"].map((item) => (
+        <div
+          key={`property-${item.id}`}
+          onClick={() => {
+            setCurrIndex(item.id - 1);
+            thumbSliderRef.current.slickGoTo(item.id - 1);
+            mainSliderRef.current.slickGoTo(0);
+          }}
+          className="h-32 px-1"
+        >
+          <BgImage url={item.images[0]} />
+        </div>
+      ))}
+      {data["townhouse"].map((item) => (
+        <div
+          key={`property-${item.id}`}
+          onClick={() => {
+            setCurrIndex(item.id - 1);
+            thumbSliderRef.current.slickGoTo(item.id - 1);
+            mainSliderRef.current.slickGoTo(0);
+          }}
+          className="h-32 px-1"
         >
           <BgImage url={item.images[0]} />
         </div>

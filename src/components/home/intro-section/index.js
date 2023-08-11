@@ -77,11 +77,11 @@ const IntroSection = () => {
         <SwiperSlide className="relative h-full">
           <BgImage className="h-full brightness-50" url="/assets/villa-1.jpg" />
           <div className="absolute xs:w-[90%] md:w-3/4 xl:container top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <CustomFont family="Chakra Petch" className="container">
+            <CustomFont family="Roboto" className="container">
               {activeIndexState === 0 && (
                 <>
                   <motion.div
-                    className="max-w-[500px] lg:text-6xl text-4xl mb-10"
+                    className="max-w-[500px] lg:text-6xl text-4xl mb-10 font-semibold"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.8 }}
                   >
@@ -99,6 +99,7 @@ const IntroSection = () => {
                       VILLA
                     </motion.h2>
                     <motion.h2
+                      className="font-semibold"
                       initial={{ opacity: 0, y: 30 }}
                       animate={{
                         opacity: 1,
@@ -117,7 +118,7 @@ const IntroSection = () => {
                     transition={{ duration: 0.8 }}
                   >
                     <motion.h3
-                      className="max-w-[500px] p-4 bg-black/50 text-xl"
+                      className="max-w-[500px] p-4 bg-black/50 text-xl font-semibold"
                       initial={{ opacity: 0 }}
                       animate={{
                         opacity: 1,
@@ -140,11 +141,11 @@ const IntroSection = () => {
         <SwiperSlide className="relative h-full">
           <BgImage className="h-full brightness-50" url="/assets/villa-2.jpg" />
           <div className="absolute xs:w-[90%] md:w-3/4 xl:container top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <CustomFont family="Chakra Petch" className="container">
+            <CustomFont family="Roboto" className="container">
               {activeIndexState === 1 && (
                 <>
                   <motion.div
-                    className="max-w-[500px] lg:text-6xl text-4xl mb-10"
+                    className="max-w-[500px] lg:text-6xl text-4xl mb-10 font-semibold"
                     transition={{ duration: 0.8 }}
                     whileHover={{ scale: 1.05 }}
                   >
@@ -162,6 +163,7 @@ const IntroSection = () => {
                       VILLA
                     </motion.h2>
                     <motion.h2
+                      className="font-semibold"
                       initial={{ opacity: 0, y: 30 }}
                       animate={{
                         opacity: 1,
@@ -180,7 +182,7 @@ const IntroSection = () => {
                     transition={{ duration: 0.8 }}
                   >
                     <motion.h3
-                      className="max-w-[500px] p-4 bg-black/50 text-xl"
+                      className="max-w-[500px] p-4 bg-black/50 text-xl font-semibold"
                       initial={{ opacity: 0 }}
                       animate={{
                         opacity: 1,
@@ -203,7 +205,7 @@ const IntroSection = () => {
         <SwiperSlide className="relative h-full">
           <BgImage className="h-full brightness-50" url="/assets/villa-3.jpg" />
           <div className="absolute xs:w-[90%] md:w-3/4 xl:container top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <CustomFont family="Chakra Petch" className="container">
+            <CustomFont family="Roboto" className="container">
               {activeIndexState === 2 && (
                 <>
                   <motion.div
@@ -212,6 +214,7 @@ const IntroSection = () => {
                     transition={{ duration: 0.8 }}
                   >
                     <motion.h2
+                      className="font-semibold"
                       initial={{ opacity: 0, y: 30 }}
                       animate={{
                         opacity: 1,
@@ -225,6 +228,7 @@ const IntroSection = () => {
                       VILLA
                     </motion.h2>
                     <motion.h2
+                      className="font-semibold"
                       initial={{ opacity: 0, y: 30 }}
                       animate={{
                         opacity: 1,
@@ -243,7 +247,7 @@ const IntroSection = () => {
                     transition={{ duration: 0.8 }}
                   >
                     <motion.h3
-                      className="max-w-[500px] p-4 bg-black/50 text-xl"
+                      className="max-w-[500px] p-4 bg-black/50 text-xl font-semibold"
                       initial={{ opacity: 0 }}
                       animate={{
                         opacity: 1,
@@ -264,7 +268,7 @@ const IntroSection = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative h-full">
-          <Vimeo
+          {/* <Vimeo
             video="711121097"
             className={classNames({
               // "2xl:!w-full": true,
@@ -291,20 +295,20 @@ const IntroSection = () => {
               width={100}
               height={100}
             />
-          )}
-          {/* // <video
-            //   id="background-video"
-            //   className="w-full h-full object-cover"
-            //   autoPlay
-            //   loop
-            //   muted
-            //   poster="/assets/video_poster.jpg"
-            //   onEnded={() => {
-            //     sliderRef.current.swiper.slideToLoop(0);
-            //   }}
-            // >
-            //   <source src="/assets/intro.mp4" type="video/mp4" />
-            // </video>  */}
+          )} */}
+          <video
+            id="background-video"
+            className="w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            poster="/assets/video_poster.jpg"
+            onEnded={() => {
+              sliderRef.current.swiper.slideToLoop(0);
+            }}
+          >
+            <source src="/assets/intro.mp4" type="video/mp4" />
+          </video>
           <div className="absolute xs:hidden md:flex justify-between mx-20 mb-8 bottom-0 left-0 right-0 z-10">
             <div></div>
             <div>
