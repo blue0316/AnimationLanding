@@ -13,10 +13,10 @@ export const useOutsideClick = (ref, callback) => {
       }
     };
 
-    window.addEventListener("mousedown", handler);
+    window && window.addEventListener("mousedown", handler);
 
     return () => {
-      window.removeEventListener("mousedown", handler);
+      window && window.removeEventListener("mousedown", handler);
     };
   }, [ref, callback]);
 };
