@@ -8,9 +8,9 @@ const ALink = ({ href, children, className, onClick }) => {
    * @param {MouseEvent} e
    */
   function onClickHandler(event) {
-    if (href == "#") {
-      event.preventDefault();
-    }
+    // if (href == "#") {
+    //   event.preventDefault();
+    // }
 
     if (typeof onClick == "function") {
       onClick();

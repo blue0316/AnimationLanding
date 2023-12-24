@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import CustomFont from "@/components/common/CustomFont";
+// import CustomFont from "@/components/common/CustomFont";
 import PropertiesHeader from "@/components/common/headers/PropertiesHeader";
 import MainSlider from "@/components/common/properties-slider/MainSlider";
 import PropertiesSlider from "@/components/common/properties-slider/PropertiesSlider";
@@ -35,7 +35,7 @@ const PropertiesSection = () => {
 
   return (
     <div ref={outsideRef} className="relative h-full">
-      <CustomFont family="Roboto" className="font-semibold">
+      {/* <CustomFont family="Roboto" className="font-semibold"> */}
         <PropertiesHeader currType={currType} setCurrType={setCurrType} />
         <MainSlider
           className="h-screen"
@@ -45,7 +45,7 @@ const PropertiesSection = () => {
           setCurrIndex={setCurrIndex}
           changeProperty={changeProperty}
         />
-      </CustomFont>
+      {/* </CustomFont> */}
       <div className="absolute bottom-8 right-12 z-10 w-[37.5vw]">
         <PropertiesSlider
           className="thumb-slider"
