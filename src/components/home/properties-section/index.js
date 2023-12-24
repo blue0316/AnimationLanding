@@ -3,13 +3,17 @@ import React, { useEffect, useRef, useState } from "react";
 import CustomFont from "@/components/common/CustomFont";
 import PropertiesHeader from "@/components/common/headers/PropertiesHeader";
 import MainSlider from "@/components/common/properties-slider/MainSlider";
+import PropertiesSlider from "@/components/common/properties-slider/PropertiesSlider";
 
 import { propertyData } from "./data";
-import PropertiesSlider from "@/components/common/properties-slider/PropertiesSlider";
+import DetailSidebar from "./detailSidebar";
+import VideoPlayer from "./videoPlayer";
 
 const PropertiesSection = () => {
   const mainSliderRef = useRef(null);
   const thumbSliderRef = useRef(null);
+  const sidebarRef = useRef(null);
+  const outsideRef = useRef(null);
 
   const [currType, setCurrType] = useState("apartment");
   const [currIndex, setCurrIndex] = useState(0);
@@ -30,7 +34,7 @@ const PropertiesSection = () => {
   }, [currIndex]);
 
   return (
-    <div className="relative h-full">
+    <div ref={outsideRef} className="relative h-full">
       <CustomFont family="Roboto" className="font-semibold">
         <PropertiesHeader currType={currType} setCurrType={setCurrType} />
         <MainSlider
@@ -42,7 +46,7 @@ const PropertiesSection = () => {
           changeProperty={changeProperty}
         />
       </CustomFont>
-      <div className="absolute bottom-12 right-16 z-10 w-[30vw]">
+      <div className="absolute bottom-8 right-12 z-10 w-[37.5vw]">
         <PropertiesSlider
           className="thumb-slider"
           data={propertyData}
@@ -52,6 +56,11 @@ const PropertiesSection = () => {
           setCurrIndex={setCurrIndex}
         />
       </div>
+      <DetailSidebar
+        sidebarRef={sidebarRef}
+        data={propertyData[currType][currIndex % 3]}
+      />
+      <VideoPlayer />
     </div>
   );
 };

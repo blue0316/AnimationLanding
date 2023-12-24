@@ -7,7 +7,8 @@ const BgImage = ({ children, ...props }) => {
       className={classNames({
         "bg-cover bg-center h-full flex justify-center": true,
         [props.className]: true,
-        dark: props.dark,
+        "dark": props.dark,
+        "grey": props.grey,
       })}
       onClick={props.onClick}
       initial={{

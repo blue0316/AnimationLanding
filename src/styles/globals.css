@@ -161,6 +161,20 @@ canvas {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+.bg-cover.grey {
+  position: relative;
+}
+
+.bg-cover.grey::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .property-tab {
   position: relative;
   padding: 0 10px;

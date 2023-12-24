@@ -25,6 +25,7 @@
     "next": "13.4.10",
     "postcss": "8.4.26",
     "react": "18.2.0",
+    "react-detect-click-outside": "^1.1.7",
     "react-dom": "18.2.0",
     "react-font": "^1.2.1",
     "react-scroll-slider": "^1.0.1",

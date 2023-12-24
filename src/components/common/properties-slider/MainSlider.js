@@ -2,13 +2,17 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
+import { useAtom } from "jotai";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 import BgImage from "../BgImage";
 
+import { showDetailScreen, videoScreen } from "@/store";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const MainSlider = ({
   className,
@@ -28,6 +32,9 @@ const MainSlider = ({
   };
 
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const [, setDetailScreen] = useAtom(showDetailScreen);
+  const [, setVideoScreen] = useAtom(videoScreen);
 
   useEffect(() => {
     setActiveIndex(-1);
@@ -72,7 +79,7 @@ const MainSlider = ({
                           {data.title}
                         </motion.h2>
                         <motion.p
-                          className="text-xl mb-12 font-semibold uppercase"
+                          className="text-[22px] mb-12 font-semibold uppercase"
                           initial={{
                             y: "30%",
                             opacity: 0,
@@ -107,21 +114,34 @@ const MainSlider = ({
                             delay: 0.4,
                           }}
                         >
-                          <Link className="group relative mx-2" href={data.link}>
+                          <Link
+                            className="group relative mx-2 !outline-none"
+                            href={data.link}
+                          >
                             <span
-                              className="absolute left-0 right-0 -top-2 -bottom-2 bg-white bg-opacity-20 rounded-full"
-                              style={{ filter: "blur(2px)" }}
-                            ></span>
-                            <span className="px-6 py-2 border border-white rounded-full group-hover:bg-white group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10">
+                              className="px-6 py-2 border border-white rounded-full bg-white bg-opacity-20 group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10"
+                              style={{ backdropFilter: "blur(4px)" }}
+                              onClick={() => {
+                                setVideoScreen(true);
+                              }}
+                            >
                               Video Tour
                             </span>
                           </Link>
-                          <Link className="group relative mx-2" href={data.link}>
-                            <span
+                          <Link
+                            className="group relative mx-2 !outline-none"
+                            href={data.link}
+                            onClick={() => {
+                              setDetailScreen(true);
+                            }}
+                          >
+                            {/* <span
                               className="absolute left-0 right-0 -top-2 -bottom-2 bg-white bg-opacity-20 rounded-full"
-                              style={{ filter: "blur(2px)" }}
-                            ></span>
-                            <span className="px-6 py-2 border border-white rounded-full group-hover:bg-white group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10">
+                            ></span> */}
+                            <span
+                              className="px-6 py-2 border border-white rounded-full bg-white bg-opacity-20 group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10"
+                              style={{ backdropFilter: "blur(4px)" }}
+                            >
                               Details
                             </span>
                           </Link>
@@ -137,7 +157,7 @@ const MainSlider = ({
                   className="relative h-screen flex items-center"
                   key={`item-${index}`}
                   url={item}
-                  dark={true}
+                  grey={true}
                 >
                   {activeIndex === index && (
                     <motion.div
@@ -158,18 +178,23 @@ const MainSlider = ({
                       }}
                       className="absolute left-24 bottom-24 text-2xl"
                     >
-                      <Link className="group relative" href={data.link}>
-                        <span
+                      <Link
+                        className="group relative !outline-none"
+                        href={data.link}
+                        onClick={() => {
+                          setDetailScreen(true);
+                        }}
+                      >
+                        {/* <span
                           className="absolute left-0 right-0 -top-2 -bottom-2 bg-white bg-opacity-20 rounded-full"
-                          style={{ filter: "blur(2px)" }}
-                        ></span>
-                        <span className="px-6 py-2 border border-white rounded-full group-hover:bg-white group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10">
-                          Show details
+                        ></span> */}
+                        <span
+                          className="px-6 py-2 border border-white rounded-full bg-white bg-opacity-20 group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10"
+                          style={{ backdropFilter: "blur(4px)" }}
+                        >
+                          Show Details
                         </span>
                       </Link>
-                      <h3 className="text-2xl px-4 pt-4">
-                        {activeIndex + 1} / {data.images.length}
-                      </h3>
                     </motion.div>
                   )}
                 </BgImage>

@@ -68,7 +68,7 @@ const HeaderNavList = () => {
         )}
         <div
           className={classNames({
-            "fixed top-0 left-0 right-0 bottom-0 h-screen transition-all cursor-custom": true,
+            "fixed top-0 left-0 right-0 bottom-0 h-screen transition-all cursor-custom backdrop-blur": true,
             "invisible opacity-0": !open,
             "visible opacity-100 delay-300 duration-500": open,
           })}
@@ -88,13 +88,13 @@ const HeaderNavList = () => {
               <div className="nav-list-header flex flex-row justify-end my-10">
                 <button
                   onClick={() => setOpen(false)}
-                  className="px-4 xs:py-4 sm:py-2 mx-6 rounded-full border-2 sm:border-transparent leading-none text-white xs:border-white hover:sm:border-white transition-all duration-300 cursor-custom"
+                  className="px-4 xs:py-4 sm:py-2 mx-6 rounded-full border-2 leading-none hover:bg-white text-white hover:text-black xs:border-white hover:sm:border-white transition-all duration-300 cursor-custom"
                 >
                   <FontAwesomeIcon
                     icon={faClose}
                     className="sm:hidden xs:block"
                   />
-                  <span className="xs:hidden sm:block">close</span>
+                  <span className="xs:hidden sm:block">Close</span>
                 </button>
                 <button className="xs:hidden sm:block px-4 py-2 bg-white rounded-full text-black border-2 border-white transition-all duration-300 cursor-custom">
                   Menu

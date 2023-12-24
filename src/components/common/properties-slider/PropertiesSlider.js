@@ -52,7 +52,7 @@ const PropertiesSlider = ({
             thumbSliderRef.current.slickGoTo(item.id - 1);
             mainSliderRef.current.slickGoTo(0);
           }}
-          className="h-32 px-1"
+          className="h-[128px] px-1 rounded-md"
         >
           <BgImage url={item.images[0]} />
         </div>
@@ -65,7 +65,7 @@ const PropertiesSlider = ({
             thumbSliderRef.current.slickGoTo(item.id - 1);
             mainSliderRef.current.slickGoTo(0);
           }}
-          className="h-32 px-1"
+          className="h-[128px] px-1 rounded-md"
         >
           <BgImage url={item.images[0]} />
         </div>
@@ -78,7 +78,7 @@ const PropertiesSlider = ({
             thumbSliderRef.current.slickGoTo(item.id - 1);
             mainSliderRef.current.slickGoTo(0);
           }}
-          className="h-32 px-1"
+          className="h-[128px] px-1 rounded-md"
         >
           <BgImage url={item.images[0]} />
         </div>

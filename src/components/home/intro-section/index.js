@@ -74,7 +74,7 @@ const IntroSection = () => {
           stopOnLastSlide: true,
         }}
       >
-        <SwiperSlide className="relative h-full">
+        {/* <SwiperSlide className="relative h-full">
           <BgImage className="h-full brightness-50" url="/assets/villa-1.jpg" />
           <div className="absolute xs:w-[90%] md:w-3/4 xl:container top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <CustomFont family="Roboto" className="container">
@@ -201,12 +201,12 @@ const IntroSection = () => {
               )}
             </CustomFont>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
         <SwiperSlide className="relative h-full">
-          <BgImage className="h-full brightness-50" url="/assets/villa-3.jpg" />
+          <BgImage className="h-screen brightness-50" url="/assets/villa-3.jpg" />
           <div className="absolute xs:w-[90%] md:w-3/4 xl:container top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <CustomFont family="Roboto" className="container">
-              {activeIndexState === 2 && (
+              {activeIndexState === 0 && (
                 <>
                   <motion.div
                     className="max-w-[500px] lg:text-6xl text-4xl mb-10"
@@ -239,7 +239,7 @@ const IntroSection = () => {
                         duration: 0.6,
                       }}
                     >
-                      ESPEJO AQUA 3
+                      ESPEJO AQUA
                     </motion.h2>
                   </motion.div>
                   <motion.div
