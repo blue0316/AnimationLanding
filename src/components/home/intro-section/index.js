@@ -209,7 +209,7 @@ const IntroSection = () => {
               {activeIndexState === 0 && (
                 <>
                   <motion.div
-                    className="max-w-[500px] lg:text-6xl text-4xl mb-10"
+                    className="max-w-[500px] lg:text-6xl text-3xl mb-10"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.8 }}
                   >
@@ -247,7 +247,7 @@ const IntroSection = () => {
                     transition={{ duration: 0.8 }}
                   >
                     <motion.h3
-                      className="max-w-[500px] p-4 bg-black/50 text-xl font-semibold"
+                      className="max-w-[450px] p-4 bg-black/50 text-lg font-semibold"
                       initial={{ opacity: 0 }}
                       animate={{
                         opacity: 1,
@@ -309,7 +309,7 @@ const IntroSection = () => {
           >
             <source src="/assets/intro.mp4" type="video/mp4" />
           </video>
-          <div className="absolute xs:hidden md:flex justify-between mx-20 mb-8 bottom-0 left-0 right-0 z-10">
+          <div className="absolute xs:hidden md:flex justify-between bottom-40 right-8 z-10">
             <div></div>
             <div>
               <ul className="flex flex-row">

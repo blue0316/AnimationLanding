@@ -178,7 +178,7 @@ canvas {
 .property-tab {
   position: relative;
   padding: 0 10px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   color: white !important;
   background-color: transparent !important;
@@ -207,7 +207,7 @@ canvas {
 }
 
 .main-slider .slick-arrow::before {
-  font-size: 40px;
+  font-size: 36px;
 }
 
 .main-slider .slick-prev {

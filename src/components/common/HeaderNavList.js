@@ -251,16 +251,16 @@ const HeaderNavList = () => {
               <div className="nav-list-bottom flex flex-row xs:justify-end md:justify-between my-10">
                 <div className="xs:hidden md:block">
                   <ul className="flex flex-row">
-                    <li className="flex justify-center items-center w-12 h-12 mr-4 border-2 rounded-full text-xl hover:text-[#507ad5] hover:border-[#507ad5] transition-all duration-300">
+                    <li className="flex justify-center items-center w-10 h-10 mr-4 border-2 rounded-full text-xl hover:text-[#507ad5] hover:border-[#507ad5] transition-all duration-300">
                       <FontAwesomeIcon icon={faFacebook} />
                     </li>
-                    <li className="flex justify-center items-center w-12 h-12 mr-4 border-2 rounded-full text-xl hover:text-[#1DA1F2] hover:border-[#1DA1F2] transition-all duration-300">
+                    <li className="flex justify-center items-center w-10 h-10 mr-4 border-2 rounded-full text-xl hover:text-[#1DA1F2] hover:border-[#1DA1F2] transition-all duration-300">
                       <FontAwesomeIcon icon={faTwitter} />
                     </li>
-                    <li className="flex justify-center items-center w-12 h-12 mr-4 border-2 rounded-full text-xl hover:text-[#E4405F] hover:border-[#E4405F] transition-all duration-300">
+                    <li className="flex justify-center items-center w-10 h-10 mr-4 border-2 rounded-full text-xl hover:text-[#E4405F] hover:border-[#E4405F] transition-all duration-300">
                       <FontAwesomeIcon icon={faInstagram} />
                     </li>
-                    <li className="flex justify-center items-center w-12 h-12 mr-4 border-2 rounded-full text-xl hover:text-[#25F4EE] hover:border-[#25F4EE] transition-all duration-300">
+                    <li className="flex justify-center items-center w-10 h-10 mr-4 border-2 rounded-full text-xl hover:text-[#25F4EE] hover:border-[#25F4EE] transition-all duration-300">
                       <FontAwesomeIcon icon={faTiktok} />
                     </li>
                   </ul>
@@ -276,7 +276,7 @@ const HeaderNavList = () => {
           onClick={() => setOpen(!open)}
           className={classNames({ "z-20": open })}
         >
-          <div className="flex flex-col items-end justify-end w-10 h-8 cursor-pointer transform sm:-translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
+          <div className="flex flex-col items-end justify-end w-9 h-7 cursor-pointer transform sm:-translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
             <span
               className={classNames({
                 "absolute h-0.5 bg-white transform transition-all duration-300 ease-in-out -translate-y-2.5": true,

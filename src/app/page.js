@@ -17,6 +17,7 @@ const CustomActiveItem = dynamic(
 
 import IntroSection from "@/components/home/intro-section";
 import PropertiesSection from "@/components/home/properties-section";
+import { useEffect } from "react";
 
 const forwardStyleWrapper = { transform: "translateY(100%)", height: "100%" };
 const backwardStyleWrapper = { transform: "translateY(-100%)", height: "100%" };

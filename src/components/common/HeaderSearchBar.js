@@ -30,7 +30,7 @@ const HeaderSearchBar = () => {
         <FontAwesomeIcon icon={faSearch} size="lg" />
       </div>
       <input
-        className="flex-1 bg-transparent leading-6 focus:bg-transparent active:bg-transparent text-base text-white outline-none"
+        className="flex-1 bg-transparent leading-6 focus:bg-transparent active:bg-transparent text-sm text-white outline-none"
         type="text"
         name="keyword"
         placeholder="Search for Area or Development"

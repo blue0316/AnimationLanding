@@ -9,14 +9,14 @@ canvas {
   position: absolute;
   top: 50%;
   left: 5%;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .scene-nav--next {
   position: absolute;
   top: 50%;
   right: 5%;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .slide-wrapper {

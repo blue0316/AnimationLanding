@@ -18,7 +18,7 @@ const IntroHeader = () => {
       <div className="flex justify-between">
         <div className="flex justify-start items-center basis-1/5">
           <CustomFont family="Cormorant Garamond" className="w-full">
-            <ALink className="flex items-center min-h-[100px] text-2xl font-semibold">
+            <ALink className="flex items-center min-h-[100px] text-xl font-semibold">
               DELATTIO
             </ALink>
           </CustomFont>
