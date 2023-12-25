@@ -61,7 +61,7 @@ const MainSlider = ({
                     <div className="container mx-40 flex items-center h-full">
                       <div className="max-w-[50vw]">
                         <motion.h2
-                          className="text-6xl uppercase mb-4 leading-tight font-extrabold"
+                          className="text-5xl uppercase mb-4 leading-tight font-extrabold"
                           initial={{
                             y: "30%",
                             opacity: 0,
@@ -79,7 +79,7 @@ const MainSlider = ({
                           {data.title}
                         </motion.h2>
                         <motion.p
-                          className="text-[22px] mb-12 font-semibold uppercase"
+                          className="text-[20px] mb-12 font-semibold uppercase"
                           initial={{
                             y: "30%",
                             opacity: 0,
@@ -98,7 +98,7 @@ const MainSlider = ({
                           {data.desc}
                         </motion.p>
                         <motion.div
-                          className="text-2xl flex"
+                          className="text-xl flex"
                           initial={{
                             y: "30%",
                             opacity: 0,
@@ -119,7 +119,7 @@ const MainSlider = ({
                             href={data.link}
                           >
                             <span
-                              className="px-6 py-2 border border-white rounded-full bg-white bg-opacity-20 group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10"
+                              className="px-6 py-2 border text-sm border-white rounded-full bg-white bg-opacity-20 group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10"
                               style={{ backdropFilter: "blur(4px)" }}
                               onClick={() => {
                                 setVideoScreen(true);
@@ -139,7 +139,7 @@ const MainSlider = ({
                               className="absolute left-0 right-0 -top-2 -bottom-2 bg-white bg-opacity-20 rounded-full"
                             ></span> */}
                             <span
-                              className="px-6 py-2 border border-white rounded-full bg-white bg-opacity-20 group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10"
+                              className="px-6 py-2 border text-sm border-white rounded-full bg-white bg-opacity-20 group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10"
                               style={{ backdropFilter: "blur(4px)" }}
                             >
                               Details
@@ -189,7 +189,7 @@ const MainSlider = ({
                           className="absolute left-0 right-0 -top-2 -bottom-2 bg-white bg-opacity-20 rounded-full"
                         ></span> */}
                         <span
-                          className="px-6 py-2 border border-white rounded-full bg-white bg-opacity-20 group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10"
+                          className="px-6 py-2 border text-sm border-white rounded-full bg-white bg-opacity-20 group-hover:bg-opacity-100 group-hover:text-black transition-all duration-300 z-10"
                           style={{ backdropFilter: "blur(4px)" }}
                         >
                           Show Details

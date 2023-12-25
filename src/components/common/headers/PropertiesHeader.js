@@ -19,13 +19,13 @@ const PropertiesHeader = ({ currType, setCurrType }) => {
       <div className="flex justify-between">
         <div className="flex justify-start items-center basis-2/5">
           <CustomFont family="Cormorant Garamond" className="w-full">
-            <ALink className="flex items-center min-h-[100px] text-2xl font-semibold">
+            <ALink className="flex items-center min-h-[100px] text-xl font-semibold">
               DELATTIO
             </ALink>
           </CustomFont>
         </div>
         <div className="flex flex-1 items-center justify-center">
-          <ul className="flex text-2xl justify-around w-full">
+          <ul className="flex text-xl justify-around w-full">
             <li
               onClick={() => {
                 currType !== 0 && setCurrType("apartment");

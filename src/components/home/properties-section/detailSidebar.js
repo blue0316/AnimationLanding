@@ -26,7 +26,7 @@ const DetailSidebar = ({ data }) => {
     <div
       ref={sidebarRef}
       className={classNames({
-        "absolute w-2/5 top-0 bottom-0 right-0 transition-all duration-300 z-10 bg-black bg-opacity-20": true,
+        "absolute w-2/5 top-0 bottom-0 right-0 transition-all duration-300 z-20 bg-black bg-opacity-20": true,
         "translate-x-full": !detailScreenState,
         "translate-x-0": detailScreenState,
       })}
@@ -59,7 +59,7 @@ const DetailSidebar = ({ data }) => {
             ))}
         </div>
         <div className="flex justify-center">
-          <button className="px-4 py-2 mt-12 border border-white rounded-full hover:bg-white hover:text-black selection:outline-none transition-all duration-300 text-2xl">
+          <button className="px-4 py-2 mt-12 text-sm border border-white rounded-full hover:bg-white hover:text-black selection:outline-none transition-all duration-300 text-2xl">
             Book Appointment
           </button>
         </div>

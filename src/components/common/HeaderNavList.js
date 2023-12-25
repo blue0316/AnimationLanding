@@ -88,7 +88,7 @@ const HeaderNavList = () => {
               <div className="nav-list-header flex flex-row justify-end my-10">
                 <button
                   onClick={() => setOpen(false)}
-                  className="px-4 xs:py-4 sm:py-2 mx-6 rounded-full border-2 leading-none hover:bg-white text-white hover:text-black xs:border-white hover:sm:border-white transition-all duration-300 cursor-custom"
+                  className="px-4 xs:py-4 sm:py-2 mx-6 rounded-full border-2 leading-none hover:bg-white text-white text-sm hover:text-black xs:border-white hover:sm:border-white transition-all duration-300 cursor-custom"
                 >
                   <FontAwesomeIcon
                     icon={faClose}
@@ -96,7 +96,7 @@ const HeaderNavList = () => {
                   />
                   <span className="xs:hidden sm:block">Close</span>
                 </button>
-                <button className="xs:hidden sm:block px-4 py-2 bg-white rounded-full text-black border-2 border-white transition-all duration-300 cursor-custom">
+                <button className="xs:hidden sm:block px-4 py-2 bg-white rounded-full text-black border-2 text-sm border-white transition-all duration-300 cursor-custom">
                   Menu
                 </button>
               </div>
@@ -131,7 +131,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(6);
                       }}
                       className={classNames({
-                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-3xl 2xl:text-4xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 0,
                       })}
                     >
@@ -149,7 +149,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(6);
                       }}
                       className={classNames({
-                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-3xl 2xl:text-4xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 1,
                       })}
                     >
@@ -167,7 +167,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(6);
                       }}
                       className={classNames({
-                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-3xl 2xl:text-4xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 2,
                       })}
                     >
@@ -185,7 +185,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(6);
                       }}
                       className={classNames({
-                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-3xl 2xl:text-4xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 2,
                       })}
                     >
@@ -203,7 +203,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(6);
                       }}
                       className={classNames({
-                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-3xl 2xl:text-4xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 2,
                       })}
                     >
@@ -221,7 +221,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(6);
                       }}
                       className={classNames({
-                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-3xl 2xl:text-4xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 2,
                       })}
                     >
@@ -239,7 +239,7 @@ const HeaderNavList = () => {
                         // sliderRef.current.swiper.slideTo(6);
                       }}
                       className={classNames({
-                        "xs:text-4xl 2xl:text-5xl font-normal header-nav none xl:block": true,
+                        "xs:text-3xl 2xl:text-4xl font-normal header-nav none xl:block": true,
                         active: activeIndex === 2,
                       })}
                     >
@@ -265,7 +265,7 @@ const HeaderNavList = () => {
                     </li>
                   </ul>
                 </div>
-                <button className="xs:py-2 xs:px-6 2xl:py-4 2xl:px-12 border-white border-2 rounded-3xl hover:bg-white hover:text-black transition-all duration-300 cursor-custom">
+                <button className="xs:py-2 xs:px-6 2xl:py-4 2xl:px-10 text-sm border-white border-2 rounded-3xl hover:bg-white hover:text-black transition-all duration-300 cursor-custom">
                   LOGIN AS AGENT
                 </button>
               </div>
